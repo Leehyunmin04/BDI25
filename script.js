@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
       p.alpha = 1 - lifeRatio * 0.9;
 
       p.el.style.transform = `translateY(${p.y + wobble}px)`;
-      p.el.style.opacity = p.alpha;
+      p.el.style.opacity = 1;
 
       if (Math.abs(p.y) > killDist || p.alpha <= 0.05) {
         p.el.remove();

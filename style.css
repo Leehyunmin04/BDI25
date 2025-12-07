@@ -10,7 +10,7 @@ body {
 }
 
 body {
-  background: linear-gradient(to bottom, #e8a945 0%, #e8753b 100%);
+  /* background: linear-gradient(to bottom, #e8a945 0%, #e8753b 100%); */
   /* font-family: 'Museo Slab', 'Roboto Slab', serif; */
   font-family: 'museo', serif;
   font-weight: 900;
