@@ -10,7 +10,7 @@ body {
 }
 
 body {
-  background: #ffffff;
+  background: linear-gradient(to bottom, #e8a945 0%, #e8753b 100%);
   /* font-family: 'Museo Slab', 'Roboto Slab', serif; */
   font-family: 'museo', serif;
   font-weight: 900;
@@ -43,8 +43,8 @@ body {
     to bottom,
     transparent 0,
     transparent 18px,
-    #000 18px,
-    #000 20px
+    #2c190b 18px,
+    #2c190b 20px
   );
   background-position: center;
   background-repeat: no-repeat;
@@ -61,7 +61,7 @@ body {
   height: 80px; /* 오선 높이와 동일하게 */
   top: 56%; /* 박스 중앙 기준으로 */
   transform: translateY(-50%); /* 세로 가운데 정렬 */
-  background: #000;
+  background: #2c190b;
 }
 
 .staff::before {
@@ -80,7 +80,7 @@ body {
   /* transform: translate(-50%, -50%); */
   font-size: 64px;
   line-height: 1;
-  color: #000;
+  color: #2c190b;
   white-space: nowrap;
   z-index: 1;
   font-family: 'museo', serif;
@@ -114,7 +114,7 @@ body {
   font-size: 64px;
   line-height: 1;
   white-space: nowrap;
-  color: #000;
+  color: #2c190b;
   font-weight: 900; /* ⬅ 가장 Bold */
   text-transform: uppercase; /* ⬅ 전체 대문자 */
 }
