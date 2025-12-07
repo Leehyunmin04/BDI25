@@ -112,12 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // ① 박자 시작 때 강하게 한 번씩 발사
     if (beatIndex !== lastBeatIndex) {
       lastBeatIndex = beatIndex;
-      emitParticles(0.8); // “쿵” 할 때 많이
+      emitParticles(0.9); // “쿵” 할 때 많이
     }
 
     // ② 항상 조금씩은 나오는 기본 흐름 (ambient)
     //    파티클이 너무 적으면, 박자와 상관없이 살짝씩 계속 뿌리기
-    if (particles.length < MAX_PARTICLES * 0.1) {
+    if (particles.length < MAX_PARTICLES * 0.3) {
       emitParticles(0.25); // 약한 양이지만 프레임마다 누적 → 항상 조금씩 나옴
     }
 
