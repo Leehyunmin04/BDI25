@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #ffffff;
+  /* font-family: 'Museo Slab', 'Roboto Slab', serif; */
+  font-family: 'museo', serif;
+  font-weight: 900;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  width: 100%;
+  max-width: 1200px;
+  padding: 60px 40px;
+}
+
+/* 오선지가 가운데 길게 놓인 느낌 */
+.staff-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 실제 오선지 박스 */
+.staff {
+  position: relative;
+  width: 900px;
+  height: 140px;
+  /* overflow 없음: 조각이 화면 세로 끝까지 나갈 수 있게 */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 18px,
+    #000 18px,
+    #000 20px
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100px; /* 오선이 들어있는 영역 높이 = 100px */
+  padding: 0 40px;
+}
+
+/* 양 끝의 세로줄: 오선 영역(100px) 안에서만 보이도록 */
+.staff::before,
+.staff::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 80px; /* 오선 높이와 동일하게 */
+  top: 56%; /* 박스 중앙 기준으로 */
+  transform: translateY(-50%); /* 세로 가운데 정렬 */
+  background: #000;
+}
+
+.staff::before {
+  left: 20px;
+}
+
+.staff::after {
+  right: 20px;
+}
+
+/* 가운데 기준 텍스트 */
+.base-text {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  font-size: 64px;
+  line-height: 1;
+  color: #000;
+  white-space: nowrap;
+  z-index: 1;
+  font-family: 'museo', serif;
+  font-weight: 900;
+  font-style: normal;
+  text-transform: uppercase; /* ⬅ 전체 대문자 */
+}
+
+/* 조각 레이어 */
+.fragment-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* 한 개의 조각 (클리핑만 하고, 모양은 고정) */
+.fragment {
+  position: absolute;
+  inset: 0;
+  opacity: 0.9;
+  will-change: transform;
+}
+
+/* 조각 안의 전체 문장 -> clip-path로 일부만 보이게 */
+.fragment span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 64px;
+  line-height: 1;
+  white-space: nowrap;
+  color: #000;
+  font-weight: 900; /* ⬅ 가장 Bold */
+  text-transform: uppercase; /* ⬅ 전체 대문자 */
+}
